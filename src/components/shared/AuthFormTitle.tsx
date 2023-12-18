@@ -1,4 +1,4 @@
-const AuthFormTitle = ({ title }) => {
+const AuthFormTitle = ({ title }: { title: string }) => {
   return (
     <div>
       <div className="flex items-center">

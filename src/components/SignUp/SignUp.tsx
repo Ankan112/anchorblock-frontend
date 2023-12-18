@@ -65,7 +65,7 @@ const SignUp = () => {
           </div>
           <button
             type="submit"
-            className="w-full rounded-lg py-[10px] mt-5 text-white bg-[#6941C6]"
+            className="w-full rounded-lg py-[10px] mt-5 text-white bg-[#6941C6] transition-transform active:scale-95 hover:opacity-95"
           >
             Sing Up
           </button>
