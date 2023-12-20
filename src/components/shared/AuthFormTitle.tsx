@@ -3,7 +3,7 @@ const AuthFormTitle = ({ title }: { title: string }) => {
     <div>
       <div className="flex items-center">
         <div>
-          <img src="/images/paper 1.png" alt="" />
+          <img src="/public/images/paper 1.png" alt="" />
         </div>
         <span className="text-[28px] font-bold text-[#4E5D78] ml-2">Stack</span>
       </div>

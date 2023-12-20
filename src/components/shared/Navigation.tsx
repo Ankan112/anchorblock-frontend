@@ -13,7 +13,7 @@ const Navigation = () => {
         <div className="flex items-center">
           <div className="flex justify-center items-center">
             <div className="">
-              <img src="/images/paper 1.svg" alt="paper" />
+              <img src="/public/images/paper 1.svg" alt="paper" />
             </div>
             <span className="text-[20px] w-[98px] font-bold ml-3">Stack</span>
           </div>
@@ -38,18 +38,18 @@ const Navigation = () => {
         <div className="flex items-center">
           <div className="flex mr-4">
             <div className="mr-1 p-[10px]">
-              <img src="/images/search.svg" alt="search" />
+              <img src="/public/images/search.svg" alt="search" />
             </div>
             <div className="mr-1 p-[10px]">
-              <img src="/images/settings.svg" alt="settings" />
+              <img src="/public/images/settings.svg" alt="settings" />
             </div>
             <div className="mr-1 p-[10px]">
-              <img src="/images/bell.svg" alt="bell" />
+              <img src="/public/images/bell.svg" alt="bell" />
             </div>
           </div>
           <div className="flex items-center gap-5">
             <Link to={"/dashboard"}>
-              <img src="/images/Avatar.png" alt="Avatar" />
+              <img src="/public/images/Avatar.png" alt="Avatar" />
             </Link>
             {token && (
               <button
