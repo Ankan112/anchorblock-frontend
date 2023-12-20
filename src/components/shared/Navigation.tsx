@@ -6,6 +6,7 @@ const Navigation = () => {
     localStorage.removeItem("token");
     navigate("/");
   };
+  const token = localStorage.getItem("token");
   return (
     <div className="bg-[#6941C6] h-[72px] flex items-center">
       <div className="main-container text-white flex justify-between items-center">
@@ -50,12 +51,14 @@ const Navigation = () => {
             <Link to={"/dashboard"}>
               <img src="/images/Avatar.png" alt="Avatar" />
             </Link>
-            <button
-              onClick={handleSingOut}
-              className="py-2 px-3 mr-1 border border-solid rounded-[6px] hover:bg-[#7F56D9] duration-300"
-            >
-              SingOut
-            </button>
+            {token && (
+              <button
+                onClick={handleSingOut}
+                className="py-2 px-3 mr-1 border border-solid rounded-[6px] hover:bg-[#7F56D9] duration-300"
+              >
+                SingOut
+              </button>
+            )}
           </div>
         </div>
       </div>
