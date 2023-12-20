@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
+  const navigate = useNavigate();
+  const handleSingOut = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
   return (
     <div className="bg-[#6941C6] h-[72px] flex items-center">
       <div className="main-container text-white flex justify-between items-center">
@@ -41,10 +46,16 @@ const Navigation = () => {
               <img src="/images/bell.svg" alt="bell" />
             </div>
           </div>
-          <div>
+          <div className="flex items-center gap-5">
             <Link to={"/dashboard"}>
               <img src="/images/Avatar.png" alt="Avatar" />
             </Link>
+            <button
+              onClick={handleSingOut}
+              className="py-2 px-3 mr-1 border border-solid rounded-[6px] hover:bg-[#7F56D9] duration-300"
+            >
+              SingOut
+            </button>
           </div>
         </div>
       </div>

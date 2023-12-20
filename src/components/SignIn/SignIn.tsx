@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthFormTitle from "../shared/AuthFormTitle";
 import { useSignInMutation } from "../../redux/auth/authApi";
 import Swal from "sweetalert2";
@@ -11,6 +11,7 @@ type Inputs = {
 
 const SignIn = () => {
   const [singIn, { isLoading }] = useSignInMutation();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -30,6 +31,7 @@ const SignIn = () => {
         text: "User Sign In Successful!",
         icon: "success",
       });
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

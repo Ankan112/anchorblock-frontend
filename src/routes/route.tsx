@@ -3,6 +3,7 @@ import SignUp from "../components/SignUp/SignUp";
 import Home from "../components/Home/Home";
 import SignIn from "../components/SignIn/SignIn";
 import Users from "../components/Users/Users";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
   },
   {
     path: "/users",
-    element: <Users />,
+    element: (
+      <PrivateRoute>
+        <Users />
+      </PrivateRoute>
+    ),
   },
 ]);
