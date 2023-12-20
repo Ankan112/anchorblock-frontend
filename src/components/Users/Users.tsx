@@ -27,7 +27,7 @@ const Users = () => {
               style={{ boxShadow: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)" }}
             >
               <div>
-                <img src="/public/images/upload-cloud.svg" alt="" />
+                <img src="/images/upload-cloud.svg" alt="" />
               </div>
               Import
             </button>
@@ -36,7 +36,7 @@ const Users = () => {
               style={{ boxShadow: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)" }}
             >
               <div>
-                <img src="/public/images/plus.svg" alt="" />
+                <img src="/images/plus.svg" alt="" />
               </div>
               Add User
             </button>
@@ -72,7 +72,7 @@ const Users = () => {
                   <span className="flex items-center text-xs font-medium text-[#667085] gap-1">
                     User Info
                     <div>
-                      <img src="/public/images/arrow-down.svg" alt="" />
+                      <img src="/images/arrow-down.svg" alt="" />
                     </div>
                   </span>
                 </td>
@@ -139,10 +139,10 @@ const Users = () => {
                   <td className="pl-2 pr-4 border-b border-solid border-[#EAECF0]">
                     <div className="flex gap-5 items-center  justify-center">
                       <button>
-                        <img src="/public/images/trash-2.svg" alt="" />
+                        <img src="/images/trash-2.svg" alt="" />
                       </button>
                       <button>
-                        <img src="/public/images/edit-2.svg" alt="" />
+                        <img src="/images/edit-2.svg" alt="" />
                       </button>
                     </div>
                   </td>
