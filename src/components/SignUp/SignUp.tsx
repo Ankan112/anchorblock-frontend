@@ -1,6 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import AuthFormTitle from "../shared/AuthFormTitle";
+import { useSingUpMutation } from "../../redux/auth/authApi";
+import Swal from "sweetalert2";
 
 type Inputs = {
   password: string;
@@ -8,12 +10,30 @@ type Inputs = {
 };
 
 const SignUp = () => {
+  const [SignUp, { isLoading }] = useSingUpMutation();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    try {
+      const result = await SignUp(data).unwrap();
+      // token save in local storage
+      localStorage.setItem("token", JSON.stringify(result.token));
+      // reset form after sing up
+      reset();
+      // success modal show after successfully sing up.
+      Swal.fire({
+        title: "Well Done!",
+        text: "User Sign Up Successful!",
+        icon: "success",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="main-container flex justify-center items-center h-screen">
@@ -65,9 +85,11 @@ const SignUp = () => {
           </div>
           <button
             type="submit"
-            className="w-full rounded-lg py-[10px] mt-5 text-white bg-[#6941C6] transition-transform active:scale-95 hover:opacity-95"
+            className={`${
+              isLoading && "cursor-not-allowed"
+            } w-full rounded-lg py-[10px] mt-5 text-white bg-[#6941C6] transition-transform active:scale-95 hover:opacity-95`}
           >
-            Sing Up
+            {isLoading ? "Loading..." : "Sing Up"}
           </button>
           <p className="font-medium text-[#377DFF] mt-6">
             <span className="text-[#B0B7C3]">Already have an account? </span>
